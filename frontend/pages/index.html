@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlowBudget — Kelola Keuangan Anda</title>
+  <meta name="description" content="FlowBudget — Aplikasi pencatat keuangan pribadi modern. Pantau pemasukan dan pengeluaran dengan mudah."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/styles/main.css"/>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="/services/api.js"></script>
+  <script src="/services/router.js"></script>
+  <script src="/components/utils.js"></script>
+  <script src="/components/sidebar.js"></script>
+  <script src="/pages/login.js"></script>
+  <script src="/pages/register.js"></script>
+  <script src="/pages/dashboard.js"></script>
+  <script src="/pages/transactions.js"></script>
+  <script src="/pages/transaction-form.js"></script>
+
+  <script>
+    router.register('login',           (c)    => renderLoginPage(c));
+    router.register('register',        (c)    => renderRegisterPage(c));
+    router.register('dashboard',       (c)    => renderDashboardPage(c));
+    router.register('transactions',    (c)    => renderTransactionsPage(c));
+    router.register('add-transaction', (c)    => renderAddTransactionPage(c));
+    router.register('edit-transaction',(c, p) => renderEditTransactionPage(c, p));
+    router.init();
+  </script>
+</body>
+</html>
